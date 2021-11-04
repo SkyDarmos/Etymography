@@ -1,72 +1,12 @@
 <!DOCTYPE html>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
 <input type="hidden" id="Vertical" value="Vertical">
-<input type="hidden" id="Hannom" value="Hán Nôm">
-<input type="hidden" id="Muong" value="Mõl">
-<input type="hidden" id="Yue" value="Yue">
-<input type="hidden" id="Mandarin" value="Mandarin">
-<input type="hidden" id="Midchinese" value="Middle Chinese">
-<input type="hidden" id="Wu" value="Wú">
-<input type="hidden" id="Eastmin" value="Eastern Mín">
-<input type="hidden" id="Southmin" value="Southern Mín">
-<input type="hidden" id="Hakka" value="Hakka">
-<input type="hidden" id="Sawndip" value="Wǔmíng Zhuang">
-<input type="hidden" id="SinoYay" value="Yay">
-<input type="hidden" id="SinoSaek" value="Tai Saek">
-<input type="hidden" id="SinoYang" value="Western Nong">
-<input type="hidden" id="Hankor" value="Korean">
-<input type="hidden" id="Japanese" value="Japanese">
-<input type="hidden" id="Tay" value="Tày">
-<input type="hidden" id="SinoNung" value="Eastern Nong">
-<input type="hidden" id="SinoThai" value="Siamese">
-<input type="hidden" id="SinoLao" value="Lao">
-<input type="hidden" id="SinoTaidam" value="Tai Dam">
-<input type="hidden" id="SinoTaidon" value="Tai Don">
-<input type="hidden" id="SinoLanna" value="Lan Na">
-<input type="hidden" id="SinoKhuen" value="Tai Khün">
-<input type="hidden" id="SinoTaiyai" value="Tai Yai">
-<input type="hidden" id="SinoTainuea" value="Tai Nüa">
-<input type="hidden" id="SinoTailue" value="Tai Lü">
-<input type="hidden" id="SinoTaideng" value="Tai Daeng">
-<input type="hidden" id="SinoTaiyo" value="Tai Yo">
-<input type="hidden" id="SinoTaipao" value="Tai Pao">
-<input type="hidden" id="SinoAhom" value="Tai Ahom">
-<input type="hidden" id="Beijing" value="Beijing">
-<input type="hidden" id="Taipei" value="Taipei">
-<input type="hidden" id="HongKong" value="Hong Kong">
-<input type="hidden" id="HaNoi" value="Hà Nội">
-<input type="hidden" id="NamDinh" value="Nam Định">
-<input type="hidden" id="Vinh" value="Vinh">
-<input type="hidden" id="BinhDinh" value="Bình Định">
-<input type="hidden" id="SaiGon" value="Sài Gòn">
-<input type="hidden" id="QuangNam" value="Quảng Nam">
-<input type="hidden" id="HoaAn" value="Hoà An">
-<input type="hidden" id="CoXau" value="Co Xầu">
-<input type="hidden" id="SonLa" value="Mường La">
-<input type="hidden" id="QuyChau" value="Quỳ Châu">
-<input type="hidden" id="ChauLi" value="Châu Lí">
-<input type="hidden" id="TuongDuong" value="Tương Dương">
-<input type="hidden" id="Tokyo" value="Tokyo">
-<input type="hidden" id="Bangkok" value="Bangkok">
-<input type="hidden" id="Seoul" value="Seoul">
-<input type="hidden" id="Vientiane" value="Vientiane">
-<input type="hidden" id="WuMing" value="Wǔmíng">
-<input type="hidden" id="CaoBang" value="Cao Bằng">
-<input type="hidden" id="CaoLan" value="Cao Lan">
-<input type="hidden" id="BaoYen" value="Bảo Yên">
-<input type="hidden" id="NungMin" value="Nùng Min">
-<input type="hidden" id="NungAn" value="Nùng An">
-<input type="hidden" id="NungInh" value="Nùng Inh">
-<input type="hidden" id="NungLoi" value="Nùng Lòi">
-<input type="hidden" id="NungChao" value="Nùng Cháo">
-<input type="hidden" id="NungDin" value="Nùng Dín">
-<input type="hidden" id="NungFS" value="Nùng Fa̱n Slình">
-<input type="hidden" id="Debao" value="Dé Bǎo">
-<input type="hidden" id="Sapa" value="Sa Pa">
-<input type="hidden" id="WeangzMox" value="Vương Mẫu">
-<input type="hidden" id="PanNa" value="Chiềng Hung">
-<input type="hidden" id="MuongLay" value="Mường Lay">
+<input type="hidden" id="English" value="English">
+<input type="hidden" id="German" value="German">
+<input type="hidden" id="Hochdeutsch" value="Hochdeutsch">
+<input type="hidden" id="RP" value="Received Pronunciation">
+<input type="hidden" id="US" value="General American">
+
 <input type="hidden" id="DictGuide" value="Press SHIFT">
 
 <script type="text/javascript">
@@ -83,14 +23,14 @@
 </script>
 <script type="text/javascript" src="./Scripts/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="./Scripts/sql.js"></script>
-<script type="text/javascript" src="./Scripts/ime.js"></script>
+<script type="text/javascript" src="./Scripts/sinicize.js"></script>
 <script type="text/javascript" src="./Scripts/imemobile.js"></script>
 <script type="text/javascript" src="./Scripts/transliterate.js"></script>
 <script src="https://code.responsivevoice.org/responsivevoice.js?key=oxZ9YHww"></script>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinogram IME - Linguaevum</title>
+    <title>Etymography</title>
     <link href="./Content/bootstrap.css" rel="stylesheet">
 	<link href="./Content/Site.css" rel="stylesheet">
 
@@ -112,15 +52,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <img src="./Resources/tho.png" class="logo">
-                                <a class="navbar-brand" href="./Subtitles">Subtitles</a>
+                                <a class="navbar-brand" href="./index">Etymography</a>
                     <ul class="nav navbar-nav">            
-					<li class="dropdown">
-                        <a class="navbar-brand dropdown-toggle" data-toggle="dropdown">Dictionaries</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="navbar-brand" style="width: 100%;" href="./TayDict">Tày - Việt</a></li>
-                            <li><a class="navbar-brand" style="width: 100%;" href="./ZhuangDict">Cuengh - Gun</a></li>
-                        </ul>
-                    </li>
 					</ul>
             </div>
         </div>
@@ -175,7 +108,8 @@
                         <span><img class="funcbutt speakbutt" src="./Resources/speak.png" style="height: 20px; margin: 7px 3px;" /></span>
                     </a>
                     <ul id="accentspeak" class="dropdown-menu">
-                        <li onclick="speakpad(0,20)"><a>IPA: Hà Nội</a></li>
+                                        <li onclick="speakpad(0.0,20)"><a>Received Pronunciation</a></li>
+                                        <li onclick="speakpad(0.1,20)"><a>General American</a></li>
                     </ul>
                 </li>
                 <li class="dropup">
@@ -185,14 +119,9 @@
                         </span>
                     </a>
                     <ul id="accentipa" class="dropdown-menu">
-                                        <li onclick="logo2ipa('HaNoi',20)"><a>IPA: Hà Nội</a></li>
-                                        <li onclick="logo2ipa('NamDinh',20)"><a>IPA: Nam Định</a></li>
-                                        <li onclick="logo2ipa('Vinh',20)"><a>IPA: Vinh</a></li>
-                                        <li onclick="logo2ipa('BinhDinh',20)"><a>IPA: Bình Định</a></li>
-                                        <li onclick="logo2ipa('QuangNam',20)"><a>IPA: Quảng Nam</a></li>
-                                        <li onclick="logo2ipa('SaiGon',20)"><a>IPA: Sài Gòn</a></li>
-                        <li onclick="convertpad(0,20)"><a>→ abc</a></li>
-                        <li onclick="convertpad(1,20)"><a>→ 文</a></li>
+                                        <li onclick="convertpad(0,20)"><a>→ abc</a></li>
+                                        <li onclick="convertpad(1,20)"><a>→ 文</a></li>
+                                        <li onclick="tovertical()"><a>Vertical</a></li>
                     </ul>
                 </li>
                 <li class="dropup" id="keyboardbutton">
@@ -266,40 +195,12 @@
             <ul class="nav navbar-nav navbar-left">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
-                                        <span id="opttablename">Hán Nôm</span>
+                                        <span id="opttablename">English</span>
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                                        <li onclick="opttableselect(0)"><a>Hán Nôm</a></li>
-                                        <li onclick="opttableselect(29)"><a>Mõl</a></li>
-                                        <li onclick="opttableselect(1)"><a>Middle Chinese</a></li>
-                                        <li onclick="opttableselect(2)"><a>Southern Mín</a></li>
-                                        <li onclick="opttableselect(3)"><a>Eastern Mín</a></li>
-                                        <li onclick="opttableselect(4)"><a>Hakka</a></li>
-                                        <li onclick="opttableselect(5)"><a>Mandarin</a></li>
-                                        <li onclick="opttableselect(6)"><a>Yue</a></li>
-                                        <li onclick="opttableselect(7)"><a>Wú</a></li>
-                                        <li onclick="opttableselect(8)"><a>Korean</a></li>
-                                        <li onclick="opttableselect(9)"><a>Japanese</a></li>
-                                        <li onclick="opttableselect(10)"><a>Wǔmíng Zhuang</a></li>
-                                        <li onclick="opttableselect(11)"><a>Yay</a></li>
-                                        <li onclick="opttableselect(12)"><a>Tai Saek</a></li>
-                                        <li onclick="opttableselect(13)"><a>Yang Zhuang</a></li>
-                                        <li onclick="opttableselect(14)"><a>Tày</a></li>
-                                        <li onclick="opttableselect(28)"><a>Eastern Nùng</a></li>
-                                        <li onclick="opttableselect(17)"><a>Tai Dam</a></li>
-                                        <li onclick="opttableselect(18)"><a>Tai Don</a></li>
-                                        <li onclick="opttableselect(27)"><a>Tai Daeng</a></li>
-                                        <li onclick="opttableselect(24)"><a>Tai Yo</a></li>
-                                        <li onclick="opttableselect(25)"><a>Tai Pao</a></li>
-                                        <li onclick="opttableselect(22)"><a>Tai Nüa</a></li>
-                                        <li onclick="opttableselect(23)"><a>Tai Lü</a></li>
-                                        <li onclick="opttableselect(15)"><a>Siamese</a></li>
-                                        <li onclick="opttableselect(16)"><a>Lao</a></li>
-                                        <li onclick="opttableselect(19)"><a>Lan Na</a></li>
-                                        <li onclick="opttableselect(20)"><a>Tai Khün</a></li>
-                                        <li onclick="opttableselect(21)"><a>Tai Yai</a></li>
-                                        <li onclick="opttableselect(26)"><a>Tai Ahom</a></li>
+                                        <li onclick="opttableselect(0)"><a>English</a></li>
+                                        <li onclick="opttableselect(1)"><a>German</a></li>
                     </ul>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
@@ -309,6 +210,7 @@
                     <ul class="dropdown-menu">
                         <li id="kb0" onclick="optkeyboard(0)"><a>E→文</a></li>
                         <li id="kb1" onclick="optkeyboard(1)"><a>E→อ</a></li>
+                        <li id="kb1" onclick="optkeyboard(1)"><a>อ→文</a></li>
                     </ul>
                 </li>
             </ul>
@@ -317,7 +219,7 @@
 </nav>
 
 <footer>
-        <p style="margin: 0 0 0 30px; font-size: 12px;">© 2020 - Linguaevum</p>
+        <p style="margin: 0 0 0 30px; font-size: 12px;">© 2006-2021 - Sky Darmos - Etymography</p>
     </footer>
 <script src="./Scripts/jquery-1.10.2.js"></script>
 <script src="./Scripts/jquery-3.0.0.js"></script>
