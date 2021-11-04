@@ -48,9 +48,47 @@ function txtPadKeyInput(evt) {
   if (newtxtPadlength > curtxtPadlength) {
       var evtC = document.getElementById("txtPad").value.substring(curcaret - 1, curcaret);
       if (evtK == 13) {   //ENTER
-          $("#rubytype").html("");
-          listUpdate();
-          lentype = 0;
+          $("#txtPad").val($("#txtPad").val().substring(0, curcaret - 1) + $("#txtPad").val().substring(curcaret, $("#txtPad").val().length));
+          $("#txtPad")[0].selectionStart = $("#txtPad")[0].selectionEnd = curcaret - 1;
+        if (optionlist.length == 1) {
+                listUpdate();
+        }
+        if (ind < concSz) {
+            if (concSz == conqSz)
+                conqueue = "";
+            else
+                conqueue = conqueue + rubystr + " ";
+            contail = "";
+        } else if (ind < conqSz) {
+            conqueue = conqueue + rubystr + " ";
+            contail = rubystr + " ";
+        } else if (ind < conrSz)
+            conqueue = contail = "";
+        else if (ind < contcSz) {
+            conlenbuf = conlentail;
+            if (contcSz == contqSz)
+                conqueue = "";
+            else
+                conqueue = contail + rubystr + " ";
+            contail = "";
+        } else if (ind < contqSz) {
+            conlenbuf = conlentail;
+            conqueue = contail + rubystr + " ";
+            contail = rubystr + " ";
+        } else if (ind < contrSz) {
+            conlenbuf = conlentail;
+            conqueue = contail = "";
+        } else {
+            conqueue = rubystr + " ";
+            contail = "";
+            conlenbuf = 0;
+        }
+        if (optionlist.length != 0) {
+            evt.preventDefault();
+            conlentmp = $("#w" + selectedindex).text().length;
+            putWord($("#w" + selectedindex).text());
+        }
+        $("#txtPad").focus();
           curtxtPadlength = document.getElementById("txtPad").value.length;
           return;
       }
@@ -88,12 +126,7 @@ function txtPadKeyInput(evt) {
           $("#txtPad").val($("#txtPad").val().substring(0, curcaret - 1) + $("#txtPad").val().substring(curcaret, $("#txtPad").val().length));
           $("#txtPad")[0].selectionStart = $("#txtPad")[0].selectionEnd = curcaret - 1;
           if (optionlist.length == 1) {
-              if (isNoSpaceLang(quocngu)) {
                   listUpdate();
-              } else {
-                  $("#rubytype").html(rubystr + " ");
-                  listUpdate();
-              }
           }
           if (ind < concSz) {
               if (concSz == conqSz)
@@ -127,13 +160,57 @@ function txtPadKeyInput(evt) {
           }
           if (optionlist.length != 0) {
               evt.preventDefault();
-              conlentmp = $("#w" + selectedindex).text().length;
-              putWord($("#w" + selectedindex).text());
+              conlentmp = $("#w" + selectedindex).text().length + 1;
+              putWord($("#w" + selectedindex).text() + " ");
           }
           curtxtPadlength = document.getElementById("txtPad").value.length;
           $("#txtPad").focus();
           return;
-      } else if ((evtC == '.') || (evtC == ',')) {    //Punctuation
+      } else if (evtK == 45) {    //HYPHEN
+          $("#txtPad").val($("#txtPad").val().substring(0, curcaret - 1) + $("#txtPad").val().substring(curcaret, $("#txtPad").val().length));
+          $("#txtPad")[0].selectionStart = $("#txtPad")[0].selectionEnd = curcaret - 1;
+        if (optionlist.length == 1) {
+                listUpdate();
+        }
+        if (ind < concSz) {
+            if (concSz == conqSz)
+                conqueue = "";
+            else
+                conqueue = conqueue + rubystr + "-";
+            contail = "";
+        } else if (ind < conqSz) {
+            conqueue = conqueue + rubystr + "-";
+            contail = rubystr + "-";
+        } else if (ind < conrSz)
+            conqueue = contail = "";
+        else if (ind < contcSz) {
+            conlenbuf = conlentail;
+            if (contcSz == contqSz)
+                conqueue = "";
+            else
+                conqueue = contail + rubystr + "-";
+            contail = "";
+        } else if (ind < contqSz) {
+            conlenbuf = conlentail;
+            conqueue = contail + rubystr + "-";
+            contail = rubystr + " ";
+        } else if (ind < contrSz) {
+            conlenbuf = conlentail;
+            conqueue = contail = "";
+        } else {
+            conqueue = rubystr + "-";
+            contail = "";
+            conlenbuf = 0;
+        }
+        if (optionlist.length != 0) {
+            evt.preventDefault();
+            conlentmp = $("#w" + selectedindex).text().length + 1;
+            putWord($("#w" + selectedindex).text() + "-");
+        }
+          curtxtPadlength = document.getElementById("txtPad").value.length;
+        $("#txtPad").focus();
+        return;
+    } else if ((evtC == '.') || (evtC == ',')) {    //Punctuation
           $("#txtPad").val($("#txtPad").val().substring(0, curcaret - 1) + evtC + $("#txtPad").val().substring(curcaret, $("#txtPad").val().length));
           $("#txtPad")[0].selectionStart = $("#txtPad")[0].selectionEnd = curcaret - 1;
           if ((ind >= conrSz) && (ind < contrSz))
