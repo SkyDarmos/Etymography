@@ -373,6 +373,9 @@ function txtPadKeyTyped(evt) {
         }
         $("#txtPad").focus();
         return;
+    } else if (evtK == 45) {    //HYPHEN        
+        lentype++;
+        $("#rubytype").html(typeChar($("#rubytype").text(), evtC));
     } else if (((evtK > 31) && (evtK < 39)) || ((evtK > 39) && (evtK < 48)) || ((evtK > 57) && (evtK < 65)) || ((evtK > 90) && (evtK < 96)) || ((evtK > 122) && (evtK < 127))) {    //Punctuation
         if ((ind >= conrSz) && (ind < contrSz))
             conlenbuf = conlentail;
