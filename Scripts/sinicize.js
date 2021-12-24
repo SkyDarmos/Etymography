@@ -373,47 +373,6 @@ function txtPadKeyTyped(evt) {
         }
         $("#txtPad").focus();
         return;
-    } else if (evtK == 45) {    //HYPHEN
-        if (optionlist.length == 1) {
-                listUpdate();
-        }
-        if (ind < concSz) {
-            if (concSz == conqSz)
-                conqueue = "";
-            else
-                conqueue = conqueue + rubystr + "-";
-            contail = "";
-        } else if (ind < conqSz) {
-            conqueue = conqueue + rubystr + "-";
-            contail = rubystr + "-";
-        } else if (ind < conrSz)
-            conqueue = contail = "";
-        else if (ind < contcSz) {
-            conlenbuf = conlentail;
-            if (contcSz == contqSz)
-                conqueue = "";
-            else
-                conqueue = contail + rubystr + "-";
-            contail = "";
-        } else if (ind < contqSz) {
-            conlenbuf = conlentail;
-            conqueue = contail + rubystr + "-";
-            contail = rubystr + " ";
-        } else if (ind < contrSz) {
-            conlenbuf = conlentail;
-            conqueue = contail = "";
-        } else {
-            conqueue = rubystr + "-";
-            contail = "";
-            conlenbuf = 0;
-        }
-        if (optionlist.length != 0) {
-            evt.preventDefault();
-            conlentmp = $("#w" + selectedindex).text().length + 1;
-            putWord($("#w" + selectedindex).text() + "-");
-        }
-        $("#txtPad").focus();
-        return;
     } else if (((evtK > 31) && (evtK < 39)) || ((evtK > 39) && (evtK < 48)) || ((evtK > 57) && (evtK < 65)) || ((evtK > 90) && (evtK < 96)) || ((evtK > 122) && (evtK < 127))) {    //Punctuation
         if ((ind >= conrSz) && (ind < contrSz))
             conlenbuf = conlentail;
