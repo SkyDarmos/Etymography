@@ -91,8 +91,13 @@ function tovertical() {
     $("#txtPad").css({ 'width': '50%' });
     $("#txtPadout").css({ 'writing-mode': 'vertical-rl' });
     $("#txtPadout").css({ 'display': 'block' });
+    $("#copy_button").css({ 'display': 'block' });
     var vertxt = $("#txtPad").val().replace(/\n/g, "<br>").replace(/、/g, "︑").replace(/。/g, "︒").replace(/：/g, "︓").replace(/；/g, "︔").replace(/！/g, "︕").replace(/？/g, "︖").replace(/…/g, "︙");
     $("#txtPadout").html(vertxt);
+}
+
+function share() {
+  navigator.clipboard.writeText($("#txtPadout").text());
 }
 
 function myCheck(boxclick) {
@@ -636,6 +641,7 @@ function convertpad(direction, maxlevel) {
         $("#txtPad").css({ 'width': '50%' });
         $("#txtPadout").css({ 'writing-mode': 'horizontal-tb' });
         $("#txtPadout").css({ 'display': 'block' });
+		$("#copy_button").css({ 'display': 'block' });
         $("#txtPadout").html(convtxt.replace(/\n/g, " <br> "));
     } else {
         offpad();
@@ -681,6 +687,7 @@ function logo2ipa(accent, maxlevel) {
         $("#txtPad").css({ 'width': '50%' });
         $("#txtPadout").css({ 'writing-mode': 'horizontal-tb' });
         $("#txtPadout").css({ 'display': 'block' });
+		$("#copy_button").css({ 'display': 'block' });
         $("#txtPadout").html(convtxt.replace(/\n/g, "<br>").replace(/\r/g, "<br>"));
     } else {
         offpad();
@@ -722,6 +729,7 @@ function logo2roman(maxlevel) {
         $("#txtPad").css({ 'width': '50%' });
         $("#txtPadout").css({ 'writing-mode': 'horizontal-tb' });
         $("#txtPadout").css({ 'display': 'block' });
+		$("#copy_button").css({ 'display': 'block' });
         $("#txtPadout").html(convtxt.replace(/\n/g, "<br>").replace(/\r/g, "<br>"));
     } else {
         offpad();
@@ -736,6 +744,7 @@ function focuspad() {
 
 function offpad() {
         $("#txtPadout").css({ 'display': 'none' });
+		$("#copy_button").css({ 'display': 'none' });
         $("#txtPadout").css({ 'writing-mode': 'horizontal-tb' });
         $("#txtPad").css({ 'width': '100%' });
 }
@@ -810,6 +819,7 @@ function roma2phone() {
         $("#txtPad").css({ 'width': '50%' });
         $("#txtPadout").css({ 'writing-mode': 'horizontal-tb' });
         $("#txtPadout").css({ 'display': 'block' });
+		$("#copy_button").css({ 'display': 'block' });
         $("#txtPadout").html(convtxt.replace(/\n/g, "<br>").replace(/\r/g, "<br>"));
     } else {
         offpad();

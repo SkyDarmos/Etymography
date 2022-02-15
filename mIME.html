@@ -27,6 +27,22 @@
 <script type="text/javascript" src="./Scripts/imemobile.js"></script>
 <script type="text/javascript" src="./Scripts/transliterate.js"></script>
 <script src="https://code.responsivevoice.org/responsivevoice.js?key=oxZ9YHww"></script>
+
+<style>
+
+#copy_button {
+display: none;
+background-color: #c197239c;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    top: 0;
+    right: 50%;
+    position: absolute;
+    z-index: 9999;
+}
+</style>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,6 +80,7 @@
             <td style="width: 100%;">
                 <textarea id="txtPad" style="width: 100%; height: 80vh; min-height: 452px; font-size: 16px" onkeydown="txtPadKeyDown(event)" onkeyup="txtPadKeyInput(event)" onclick="offpad()"></textarea>
                 <div id="txtPadout" style="display: none; overflow:auto; width: 50%; min-height: 452px; height: 80vh; background-color: #fff; color: #000; font-size: 16px; float: right; " onchange="focuspad()" onfocus="focuspad()"></div>
+		<button id="copy_button" onclick=share()>Copy</button>
             </td>
             <td valign="top" style="padding: 1px 2px; ">
 
