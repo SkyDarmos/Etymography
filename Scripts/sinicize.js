@@ -1158,7 +1158,7 @@ function selChar(phrase, maxlevel, defa) {
         }
         var q;
 
-        sql = "select word,(level % " + maxlevel + ") from " + opttable + " where " + optruby + "='" + fullchar + "' order by (level % " + maxlevel + ") desc";
+        sql = "select word,(level % " + maxlevel + ") from " + opttable + " where " + optruby.replace(/\'/g, "''") + "='" + fullchar + "' order by (level % " + maxlevel + ") desc";
         contents = condb.exec(sql);
         if (contents.length != 0) {
             sss = contents[0].values[0][0];
