@@ -157,7 +157,7 @@ function optkeyboard(kbsel) {
 //keydown
 function txtPadKeyPressed(evt) {
     var evtK = evt.keyCode || evt.charCode;
-    if ((evtK == 17) || (evtK == 27) || ([...$("#rubytype").text()].length >= 16)) { //CTRL or ESC
+    if ((evtK == 17) || (evtK == 27) || ([...$("#rubytype").text()].length >= 20)) { //CTRL or ESC
         contail = conqueue = "";
         conlenbuf = 0;
         delList();
